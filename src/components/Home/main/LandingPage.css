@@ -1,0 +1,140 @@
+.landingPage {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+.heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.heading1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.landingPage__latest {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.landingPage__bestseller {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.landingPage__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 0 20px 0;
+    background-color: white;
+}
+
+.landingPage__products:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.landingPage__products>p {
+    margin-top: 10px;
+}
+
+.landingPage__products>h2 {
+    font-weight: 700;
+}
+
+.landingPage__Add {
+    margin-top: 60px;
+    width: 100%;
+    cursor: pointer;
+    padding-left: 8px;
+}
+
+.landingPage__videoAdd {
+    margin-top: 50px;
+}
+
+.landingPage__play {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.landingPage__play>div {
+    background-color: white;
+    padding-bottom: 25px;
+}
+
+.landingPage__play>div:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.landingPage__play>div>h2 {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.landingPage__Associates {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.landingPage__Associates__card {
+    position: relative;
+    margin-top: 30px;
+    cursor: pointer;
+
+}
+
+.landingPage__Associates__cardName {
+    position: absolute;
+    bottom: 1px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(22, 21, 21);
+    color: white;
+    padding: 6px 0;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.landingPage__Associates__cardName>h5 {
+    padding-left: 5px;
+}
+
+.landingPage__customercare {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.landingPage__customercare>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.customer__icon {
+    font-size: 30px;
+    padding-bottom: 10px;
+}

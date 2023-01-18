@@ -1,0 +1,47 @@
+.footerSec {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    background-color: #343a40
+}
+
+.footerSec>img {
+
+    width: 150px;
+    margin-top: 80px;
+    margin-left: 40px;
+}
+
+.footerSec>div {
+    margin-top: 60px;
+}
+
+.footerSec>div>h4 {
+    color: white;
+    font-size: 20px;
+}
+
+.footerSec>div>p {
+    font-size: 12px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 13px;
+}
+
+.copyright {
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    background-color: #343a40
+}
+
+.copyright>p {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
