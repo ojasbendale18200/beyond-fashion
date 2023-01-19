@@ -16,7 +16,7 @@
     margin-left: 40px;
 }
 
-.navbar__list>h3 {
+.navbar__list>.allLinks {
     padding-left: 40px;
     color: white;
     font-weight: 600;

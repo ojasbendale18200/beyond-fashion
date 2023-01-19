@@ -1,0 +1,144 @@
+.menProducts {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.MenProducts__left {
+    width: 25%;
+    height: 800px;
+
+}
+
+.MenProducts__right {
+    width: 80%;
+    height: 800px;
+
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#property {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    margin-bottom: 15px;
+    outline: none;
+
+}
+
+.filter {
+    padding-left: 20px;
+}
+
+.filter>div>label {
+    padding-left: 8px;
+}
+
+.filter h3 {
+    /* border: 1px solid red; */
+    padding: 20px 0px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.filter h4 {
+    margin-bottom: 10px;
+    color: #434141;
+    font-weight: 700;
+}
+
+.filter>button {
+    width: 40px;
+    height: 40px;
+    margin: 2px 1px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.filter>button:hover {
+    background-color: #007e8f;
+    color: white;
+}
+
+.filter>button>i {
+    color: rgb(65, 65, 65);
+}
+
+.filter>div {
+    margin-top: 60px;
+}
+
+.budget {
+    width: 17px;
+    height: 17px;
+    margin: 10px 0px;
+}
+
+.list {
+    padding-right: 20px;
+}
+
+.list>.datalist {
+    width: 250px;
+    position: relative;
+    left: 500px;
+    bottom: 14px;
+    /* border: 1px solid yellowgreen; */
+}
+
+.list>.datalist>select {
+    height: 45px;
+    width: 250px;
+    padding-top: 20px;
+    font-size: 16px;
+    /* border: 1px solid yellowgreen; */
+    outline: none;
+}
+
+.list>.datalist>select:hover,
+.list>.datalist>select:focus {
+    border: 2px solid #007e8f;
+}
+
+.list>.datalist>span {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    color: rgb(65, 65, 65);
+}
+
+.list>a>h4 {
+    position: absolute;
+    color: black;
+    /* border: 2px solid red; */
+    top: 200px;
+    left: 330px;
+    font-size: 13px;
+}
+
+.list>#map {
+    position: relative;
+    width: 230px;
+    height: 170px;
+    bottom: 100px;
+    left: 0px;
+}

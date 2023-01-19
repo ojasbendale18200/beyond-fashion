@@ -3,6 +3,7 @@ import "../navbar/Navbar.css";
 import { MdPersonOutline } from "react-icons/md";
 import { MdFavoriteBorder } from "react-icons/md";
 import { BiCartAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -15,11 +16,21 @@ function Navbar() {
       </div>
 
       <div className="navbar__list">
-        <h3>Men</h3>
-        <h3>Women</h3>
-        <h3>Kids</h3>
-        <h3>Unisex</h3>
-        <h3>Activity</h3>
+        <Link to="/productsMen" className="allLinks">
+          <h3>Men</h3>
+        </Link>
+        <Link to="/productsWomen" className="allLinks">
+          <h3>Women</h3>
+        </Link>
+        <Link to="/" className="allLinks">
+          <h3>Kids</h3>
+        </Link>
+        <Link to="/" className="allLinks">
+          <h3>Unisex</h3>
+        </Link>
+        <Link to="/" className="allLinks">
+          <h3>Actvity</h3>
+        </Link>
       </div>
 
       <div className="navbar__search">
@@ -27,7 +38,9 @@ function Navbar() {
       </div>
 
       <div className="navbar__login">
-        <MdPersonOutline className="navbar__icons" />
+        <Link to="/register">
+          <MdPersonOutline className="navbar__icons" />
+        </Link>
         <MdFavoriteBorder className="navbar__icons" />
         <BiCartAlt className="navbar__icons" />
       </div>
