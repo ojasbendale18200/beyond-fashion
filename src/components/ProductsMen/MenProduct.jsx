@@ -84,7 +84,7 @@ function MenProduct() {
             <MenProductCard
               key={item.id}
               id={item.id}
-              image={item.images.image1}
+              image={item?.images?.image1}
               title={item.title}
               price={item.price}
               rating={item.rating}

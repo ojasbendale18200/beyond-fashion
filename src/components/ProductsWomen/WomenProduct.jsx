@@ -27,6 +27,7 @@ function WomenProduct() {
   useEffect(() => {
     getData();
   }, []);
+  
 
   return (
     <div>
