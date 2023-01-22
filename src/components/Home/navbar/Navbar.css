@@ -11,6 +11,12 @@
     margin-left: 40px;
 }
 
+.logoooo {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
 .navbar__list {
     display: flex;
     margin-left: 40px;

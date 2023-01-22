@@ -3,17 +3,25 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Home/navbar/Navbar";
 import "../ProductsMen/MenProduct.css";
 import MenProductCard from "./MenProductCard";
+import { Select } from "@chakra-ui/react";
 
 function MenProduct() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(false);
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [order, setOrder] = useState("");
 
-  const getData = async () => {
+  const getData = async (search) => {
     setLoading(true);
     try {
       let res = await axios.get(
-        `https://63c8e28ec3e2021b2d4b1ef2.mockapi.io/men`
+        `https://63c8e28ec3e2021b2d4b1ef2.mockapi.io/men`,
+        {
+          params: {
+            q: search,
+          },
+        }
       );
       setProducts(res.data);
       setLoading(false);
@@ -24,20 +32,47 @@ function MenProduct() {
   };
 
   useEffect(() => {
-    getData();
-  }, []);
+    getData(search);
+  }, [search]);
+
+  useEffect(() => {
+    if (order) {
+      if (order === "LTH") {
+        const arr = [...products].sort((a, b) => a.price - b.price);
+        setProducts([...arr]);
+      } else if (order === "HTL") {
+        const arr = [...products].sort((a, b) => b.price - a.price);
+        setProducts([...arr]);
+      }
+    }
+  }, [order]);
 
   return (
     <div>
       <Navbar />
       <h1 className="heading1">Men Section</h1>
+      <div className="MenProduct__select">
+        <Select
+          placeholder="Select option"
+          width="15%"
+          onChange={(e) => setOrder(e.target.value)}
+        >
+          <option value="LTH">Low to High</option>
+          <option value="HTL">High to Low</option>
+        </Select>
+      </div>
       <div className="menProducts">
         {/* Left */}
         <div className="MenProducts__left">
           <div class="filter">
             <hr />
             <h3>Search by property name</h3>
-            <input type="text" id="property" placeholder="Hotel Name" />
+            <input
+              type="text"
+              id="property"
+              placeholder="Hotel Name"
+              onChange={(e) => setSearch(e.target.value)}
+            />
             <hr />
             <h3>Filter by</h3>
             <h4>Star Rating</h4>
@@ -91,6 +126,7 @@ function MenProduct() {
               brand={item.brand}
               categories={item.categories}
               actualPrice={item.off_price}
+              description={item.description}
             />
           ))}
         </div>

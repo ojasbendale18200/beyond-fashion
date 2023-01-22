@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Home/navbar/Navbar";
 
 import WomenProductCard from "./WomenProductCard";
+import { Select } from "@chakra-ui/react";
 
 function WomenProduct() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(false);
   const [products, setProducts] = useState([]);
+  const [order, setOrder] = useState("");
 
   const getData = async () => {
     setLoading(true);
@@ -27,12 +29,33 @@ function WomenProduct() {
   useEffect(() => {
     getData();
   }, []);
-  
+
+  useEffect(() => {
+    if (order) {
+      if (order === "LTH") {
+        const arr = [...products].sort((a, b) => a.price - b.price);
+        setProducts([...arr]);
+      } else if (order === "HTL") {
+        const arr = [...products].sort((a, b) => b.price - a.price);
+        setProducts([...arr]);
+      }
+    }
+  }, [order]);
 
   return (
     <div>
       <Navbar />
       <h1 className="heading1">Women Section</h1>
+      <div className="MenProduct__select">
+        <Select
+          placeholder="Select option"
+          width="25%"
+          onChange={(e) => setOrder(e.target.value)}
+        >
+          <option value="LTH">Low to High</option>
+          <option value="HTL">High to Low</option>
+        </Select>
+      </div>
       <div className="WomenProducts">
         {/* Left */}
         <div className="WomenProducts__left">

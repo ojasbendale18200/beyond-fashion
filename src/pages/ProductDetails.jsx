@@ -13,19 +13,44 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue,
-  VisuallyHidden,
   List,
   ListItem,
 } from "@chakra-ui/react";
+
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from "axios";
+import Navbar from "../components/Home/navbar/Navbar";
 
 function ProductDetails() {
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
-  console.log(id);
+  const navigate = useNavigate();
+
+  const handlePost = async () => {
+    try {
+      let res = await axios.post(
+        `https://63cbafba9b72d2a88e005571.mockapi.io/cart`,
+        {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product?.images?.image1,
+          description: product.description,
+          off_price: product.off_price,
+          rating: product.rating,
+          quantity: quantity,
+        }
+      );
+
+      console.log(res);
+      navigate("/cart");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getWomenData = async () => {
     try {
@@ -59,6 +84,7 @@ function ProductDetails() {
 
   return (
     <div>
+      <Navbar />
       <Container maxW={"7xl"}>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
@@ -138,6 +164,22 @@ function ProductDetails() {
                   </List>
                 </SimpleGrid>
               </Box>
+              <Stack direction={["column", "row"]} spacing="24px">
+                <Button
+                  colorScheme="teal"
+                  onClick={() => setQuantity(quantity - 1)}
+                >
+                  -
+                </Button>
+                <Button>{quantity}</Button>
+                <Button
+                  colorScheme="teal"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
+                  +
+                </Button>
+              </Stack>
+
               <Box>
                 <Text
                   fontSize={{ base: "16px", lg: "18px" }}
@@ -198,6 +240,7 @@ function ProductDetails() {
             </Stack>
 
             <Button
+              onClick={handlePost}
               rounded={"none"}
               w={"full"}
               mt={8}
