@@ -12,6 +12,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import axios from "axios";
 
 function MenProductCard({
   id,
@@ -22,7 +23,29 @@ function MenProductCard({
   rating,
   categories,
   actualPrice,
+  description,
 }) {
+  const sendData = async () => {
+    try {
+      let res = await axios.post(
+        `https://63cbafba9b72d2a88e005571.mockapi.io/cart`,
+        {
+          id: id,
+          title: title,
+          price: actualPrice,
+          image: image,
+          description: description,
+
+          rating: rating,
+        }
+      );
+
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Center py={12}>
@@ -95,6 +118,7 @@ function MenProductCard({
             </Stack>
             <Stack align={"center"}>
               <Button
+                onClick={sendData}
                 colorScheme="teal"
                 color="white"
                 size="md"

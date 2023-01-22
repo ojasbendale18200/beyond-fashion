@@ -9,10 +9,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <img
-          src="https://cdn.staticans.com/image/catalog/Columbia/logo/116-2022_07_27-logo_main.png"
-          alt=""
-        />
+        <h3 className="logoooo">Beyond-Fashion</h3>
       </div>
 
       <div className="navbar__list">
@@ -42,7 +39,9 @@ function Navbar() {
           <MdPersonOutline className="navbar__icons" />
         </Link>
         <MdFavoriteBorder className="navbar__icons" />
-        <BiCartAlt className="navbar__icons" />
+        <Link to="/cart">
+          <BiCartAlt className="navbar__icons" />
+        </Link>
       </div>
     </div>
   );

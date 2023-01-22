@@ -10,6 +10,11 @@
 
 }
 
+.MenProduct__select {
+    padding-left: 43%;
+    margin-top: 40px;
+}
+
 .WomenProducts__right {
     width: 80%;
     height: 800px;
